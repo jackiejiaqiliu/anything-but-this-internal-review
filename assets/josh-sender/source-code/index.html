@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#ff0000">
+  <title>Everyone I Met Yesterday</title>
+  <meta name="description" content="Police sketches of every person I saw over a month. Josh Sender." />
+  <meta property="og:image" content="https://everyoneimetyesterday.com/everyoneimet.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="Everyone I Met Yesterday">
+  <meta property="og:site_name" content="Everyone I Met Yesterday">
+  <meta property="og:description" content="Police sketches of every person I saw over a month.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Everyone I Met Yesterday">
+  <meta name="twitter:image" content="https://everyoneimetyesterday.com/everyoneimet.jpg">
+  <meta name="twitter:description" content="Police sketches of every person I saw over a month.">
+  <!--    
+
+    a project by josh sender
+    
+    www.joshsender.com
+    
+    -->
+  <style>
+    ::-moz-selection {
+      color: white;
+      background: black;
+    }
+
+    ::selection {
+      color: white;
+      background: black;
+    }
+
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+
+    body {
+      background: white;
+      /* overflow: hidden; */
+    }
+    @font-face {
+      font-family: 'Serif';
+      font-style: normal;
+      font-weight: bolder;
+      src: url('CormorantSC-Medium.woff') format('woff')
+      /* src: url('LindenHill-Regular.woff') format('woff'); */
+    }
+
+
+    /* Overlay to invert */
+    .invert {
+      mix-blend-mode: difference;
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      position: fixed;
+      z-index: 5;
+      /* transition: opacity .2s ease-in; */
+    }
+
+    /* Cop photos */
+    .image-batch {
+      animation-name: example;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      padding-top: 20vh;
+    }
+    @keyframes example {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10vh);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .everyone {
+      animation: fadeInAnimation ease 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    body.noscroll {}
+
+    @keyframes fast {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5000vh);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .everyone {
+      width: 100vw;
+      height: auto;
+    }
+
+    .card {
+      position: fixed;
+      left: 50%;
+      top: 20px;
+      bottom: 20px;
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 10;
+      width: 320px;
+      height: calc(100% - 40px);
+      background: transparent;
+      /* color: yellow; */
+      color: white;
+      mix-blend-mode: difference;
+      /* background: red;
+      color: black; */
+      /* transition: background .2s ease-in; */
+    }
+
+    .card img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 87%;
+    }
+
+    .card .logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      font-family: 'Serif', serif;
+      text-transform: uppercase;
+      /* font-size: 5vh; */
+      font-size: 24px;
+      line-height: 82%;
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    .about {
+      font-family: 'Serif', serif;
+      /* font-weight: bold; */
+      /* font-size: calc(8px + .5vw); */
+      font-size: 18px;
+      /* text-transform: uppercase; */
+      text-align: center;
+      bottom: 20px;
+      position: absolute;
+      /* width: 100%; */
+      left: 50%;
+      transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      color: white;
+      cursor: help;
+    }
+
+    .description {
+      position: fixed;
+      /* top: 20px;
+      left: 50%;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); */
+      top: 46%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      /* color: yellow; */
+      color: white;
+      /* color: white; */
+      mix-blend-mode: difference;
+      /* font-family: 'Inter-Black'; */
+      text-transform: uppercase;
+      font-family: 'Serif', serif;
+      font-size: calc(32px + 15vh);
+      text-align: center;
+      font-weight: bolder;
+      width: 90%;
+      line-height: 80%;
+      opacity: 0;
+      letter-spacing: 0.5vw;
+      /* transition: opacity .2s ease-in; */
+      pointer-events: none;
+    }
+
+    /* moueover */
+    .gone {
+      opacity: 0 !important;
+    }
+
+    .transparent {
+      background: transparent !important;
+    }
+
+    .hello {
+      opacity: 1 !important;
+    }
+
+    /* .inverted {
+      color: black;
+      mix-blend-mode: difference;
+    } */
+
+    @media only screen and (max-width: 1200px) {
+      .description {
+        font-size: calc(32px + 7vw);
+      }
+
+      .card {
+        /* width: 300px; */
+        /* height: 200px; */
+      }
+
+      .card .logo {
+        width: 90%;
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 86%;
+        text-align: center;
+        font-weight: bolder;
+      }
+
+      .about {
+        font-size: 14px;
+        bottom: 20px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .card {
+        width: 300px;
+      }
+      .card .logo {
+        /* line-height: 90%; */
+        /* font-size: 24px; */
+      }
+      .description {
+        top: 50%;
+        font-size: calc(15px + 7vw);
+        line-height: 90%;
+      }
+    }
+  </style>
+  <link rel="icon" href="./favicon.png" type="image/x-icon">
+</head>
+<body>
+  <!-- description -->
+  <div class="description">Police sketches of every person I saw over a month.</div>
+  <!-- invert -->
+  <!-- <div class="invert gone"></div> -->
+  <!-- title -->
+  <div class="card">
+    <!-- <img class="logo" src="/title-min.svg" /> -->
+    <!-- <div class="logo">Everyone I Met Yesterday</div> -->
+    <div class="about">(ABOUT)</div>
+  </div>
+  <!-- image batch -->
+  <div class="image-batch">
+    <img class="everyone" src="./everyone/police-sketch-28.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-29.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-30.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-32.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-33.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-34.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-02.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-03.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-04.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-05.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-06.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-07.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-08.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-09.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-10.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-11.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-12.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-13.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-14.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-01.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-15.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-16.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-17.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-18.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-31.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-21.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-22.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-23.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-24.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-25.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-26.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-27.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-35.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-36.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-37.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-38.jpg" />
+    <img class="everyone" src="./everyone/police-sketch-39.jpg" />
+  </div>
+
+
+  <script src="./jquery-3.7.0.min.js"></script>
+  <script>
+    $(".about").hover(
+      /*hide */
+      function () {
+        $('.invert').removeClass("gone");
+        $('.card').addClass("transparent");
+        $('.logo').addClass("gone");
+        $('.description').addClass("hello");
+        $(this).addClass("inverted");
+      },
+      function () {
+        $('.invert').addClass("gone");
+        $('.card').removeClass("transparent");
+        $('.logo').removeClass("gone");
+        $('.description').removeClass("hello");
+        $(this).removeClass("inverted");
+      }
+    );
+  </script>
+
+
+</body>
+
+</html>

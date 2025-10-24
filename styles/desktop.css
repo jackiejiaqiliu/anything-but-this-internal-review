@@ -1,0 +1,304 @@
+/* Custom Cursor */
+.cursor {
+  pointer-events: none;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transform-origin: center;
+  mix-blend-mode: difference;
+  z-index: 10001;
+}
+
+.cursor__ball circle {
+  fill: #0033ff;
+}
+
+/* General Styling */
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  cursor: none;
+}
+
+body {
+  background-color: #D9D9D9;
+  font-family: "Open Sans", sans-serif;
+  color: #535353;
+  padding: 0px 30px;
+}
+
+a{
+  cursor: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #D9D9D9;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 30px 0px 20px 0px;
+}
+
+header img{
+  width: 20%;
+  height: auto;
+}
+
+footer{
+  text-align: right;
+  padding: 30px 0px;
+}
+
+footer img{
+  display: inline-block;
+  width: 120px;
+  height: auto;
+}
+
+/* homepage main */
+.index-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.index-header {
+  position: sticky;
+  top: 0;
+  background-color: #D9D9D9;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 30px 0px 20px 0px;
+  flex-shrink: 0;
+}
+
+.index-header a {
+  color: #535353;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: opacity 0.3s;
+}
+
+.index-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-shrink: 0;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-content {
+  opacity: 0;
+  pointer-events: none;
+  max-width: 800px;
+  text-align: left;
+  margin-top: 40px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 200px; 
+}
+
+.about-content p{
+  font-size:1.1rem;
+  line-height: 1.5;
+}
+
+.about-content a{
+  color:#535353;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.list-view-content {
+  opacity: 0;
+  pointer-events: none;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 40px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 200px; 
+}
+
+.list-view-content p {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.list-view-content a {
+  color: #535353;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.index-footer {
+  text-align: right;
+  padding: 30px 0px;
+  flex-shrink: 0;
+}
+
+.index-footer img {
+  display: inline-block;
+  width: 120px;
+  height: auto;
+}
+
+/* detail page 2 columns layout*/
+.prev-next{
+  display:flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.prev-next img{
+  width: 20px;
+  height: auto;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: start; 
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: start;
+}
+
+.left img, .left audio{
+  width: 100%;
+}
+
+.diptych-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+}
+
+.diptych-container img{
+  width: 100%;
+}
+
+.left.with-text {
+    gap:0;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+
+.left.with-text img{
+  margin: 30px 0px 0px 0px;
+  width: 100%;
+}
+
+.left.with-text p{
+  margin: 10px 0px 0px 0px;
+}
+
+.right {
+    align-self: start;
+}
+
+.right h1{
+  margin: 0px 0px 5px 0px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.right h2{
+  margin: 0px 0px 15px 0px;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.right h3{
+  margin: 60px 0px 15px 0px;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.right h4{
+  margin: 30px 0px 5px 0px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.right p{
+  margin: 0px;
+  font-weight: 400;
+}
+
+.right a{
+  color:#535353;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.artist-links{
+  display: flex;
+  gap: 10px;
+  margin-top:20px;
+}
+
+.artist-links img{
+  width: 20px;
+  height: auto;
+}
+
+* {
+  cursor: none !important;
+}
+
+html, body {
+  cursor: none !important;
+}
+
+.cursor__ball {
+  position: fixed !important;
+  pointer-events: none !important;
+  top: 0;
+  left: 0;
+  z-index: 9999999 !important;
+  will-change: transform;
+  opacity: 0;
+}

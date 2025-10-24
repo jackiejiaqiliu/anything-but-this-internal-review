@@ -1,0 +1,112 @@
+/* Custom Cursor */
+.cursor {
+  display: none;
+}
+
+/* General Styling */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 12px; /* slightly smaller base */
+  background-color: #D9D9D9;
+  font-family: "Noto Sans", sans-serif;
+  color: #535353;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ← add this: prevent any scrolling */
+}
+
+/* Header */
+.index-header {
+  position: sticky;
+  top: 0;
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 15px 0;
+  margin: 0 20px;
+  z-index: 10;
+}
+
+.index-header a {
+  color: #535353;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: opacity 0.3s;
+}
+
+/* Main */
+.index-main {
+  flex: 1;
+  height: 100vh; /* ← add this: fill full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.logo-container {
+  width: 85%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-30px); /* slight upward nudge to visually center */
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* About & List View */
+.about-content,
+.list-view-content {
+  opacity: 0;
+  pointer-events: none;
+  max-width: 700px;
+  width: calc(100% - 80px);  
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-content p,
+.list-view-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.list-view-content p{
+  text-align: center;
+}
+
+.about-content a,
+.list-view-content a {
+  color: #535353;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* Footer always lower right */
+.index-footer {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-align: right;
+  z-index: 10;
+}
+
+.index-footer img {
+  width: 100px;
+  height: auto;
+}
