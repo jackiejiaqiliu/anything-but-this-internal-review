@@ -155,6 +155,7 @@ body.index-body.scrollable {
   position: fixed !important;
   right: 20px !important;
   bottom: 20px !important;
+  padding: 0px;
   text-align: right;
   z-index: 100 !important;
   flex-shrink: 0;
@@ -210,7 +211,7 @@ header {
 }
 
 header img {
-  width: 40%;
+  width: 60%;
   height: auto;
 }
 
@@ -228,7 +229,7 @@ header img {
 footer {
   position: relative !important;
   text-align: right;
-  padding: 30px 0px 0px 0px;
+  padding: 30px 0px;
   right: auto !important;
   bottom: auto !important;
 }
@@ -262,28 +263,32 @@ main h1 {
 }
 
 main h2 {
-  margin: 0px 0px 15px 0px;
+  margin: 0px 0px 20px 0px;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 main h3 {
-  margin: 30px 0px 15px 0px;
+  margin: 40px 0px 15px 0px;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 main h4 {
   margin: 20px 0px 5px 0px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.1rem;
 }
 
 main p {
-  margin: 0px;
+  margin: 20px 0px 0px 0px;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+main p.image-text{
+  margin: 0px 0px 20px 0px;
 }
 
 main a {
@@ -292,20 +297,36 @@ main a {
   text-decoration-style: dotted;
 }
 
-main img,
-main audio {
+main img {
   width: 100%;
   max-width: 100%;
   height: auto;
-  margin: 20px 0px;
+  margin: 10px 0px;
+  display: block;
+}
+
+main audio {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 54px !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Make sure audio in mobile-only is visible */
+.mobile-only audio {
+  display: block !important;
+  width: 100% !important;
 }
 
 .diptych-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin: 20px 0px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .diptych-container img {
@@ -321,7 +342,7 @@ main audio {
 }
 
 .artist-links img {
-  width: 16px;
+  width: 20px;
   height: auto;
   margin: 0;
 }
