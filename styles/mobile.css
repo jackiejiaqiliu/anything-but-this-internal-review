@@ -10,7 +10,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-size: 12px; /* slightly smaller base */
+  font-size: 12px;
   background-color: #D9D9D9;
   font-family: "Noto Sans", sans-serif;
   color: #535353;
@@ -40,7 +40,6 @@ body.index-body.scrollable {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0 15px 0;
-  margin: 0 20px;
   z-index: 10;
   flex-shrink: 0;
 }
@@ -55,22 +54,22 @@ body.index-body.scrollable {
 /* Main */
 .index-main {
   flex: 1;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible !important; /* FORCE no scrollbar on main */
   text-align: center;
+  min-height: calc(100vh - 70px);
 }
 
+/* Don't change justify-content - keep centered! */
 .index-main.list-open,
 .index-main.about-open {
-  justify-content: flex-start;
-  overflow-y: auto;
-  padding-top: 20vh;
-  height: auto;
+  overflow: visible !important; /* FORCE no scrollbar on main */
+  padding-bottom: 30px;
+  min-height: 100vh;
 }
 
 .logo-container {
@@ -108,15 +107,32 @@ body.index-body.scrollable {
 
 .index-main.list-open .list-view-content,
 .index-main.about-open .about-content {
-  position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  /* Content MUCH closer to logo */
+  top: 170px;
+  transform: translateX(-50%);
 }
 
-.about-content p{
+/* Space below content */
+.index-main.list-open,
+.index-main.about-open {
+  padding-bottom: 60px; /* More space at bottom to match top */
+}
+
+.about-content p,
+.list-view-content p {
+  overflow: visible !important;
+}
+
+.about-content,
+.list-view-content,
+.about-content *,
+.list-view-content * {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+
+.about-content p {
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -124,9 +140,6 @@ body.index-body.scrollable {
 .list-view-content p {
   font-size: 1rem;
   line-height: 2;
-}
-
-.list-view-content p{
   text-align: center;
 }
 
@@ -137,19 +150,32 @@ body.index-body.scrollable {
   text-decoration-style: dotted;
 }
 
-/* Footer always lower right */
+/* Footer positioning - MUST BE VISIBLE */
 .index-footer {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
   text-align: right;
-  z-index: 10;
+  z-index: 100 !important;
   flex-shrink: 0;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* When scrollable, footer moves to bottom of content - NO TRANSITION */
+body.index-body.scrollable .index-footer {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 20px 20px 15px auto;
+  width: fit-content;
 }
 
 .index-footer img {
   width: 100px;
   height: auto;
+  display: block !important;
 }
 
 /* ============================= */
@@ -202,7 +228,7 @@ header img {
 footer {
   position: relative !important;
   text-align: right;
-  padding: 30px 0px;
+  padding: 30px 0px 0px 0px;
   right: auto !important;
   bottom: auto !important;
 }

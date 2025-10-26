@@ -1,8 +1,4 @@
 // =============================
-// CUSTOM CURSOR
-// =============================
-
-// =============================
 // CUSTOM CURSOR (FIXED)
 // =============================
 
@@ -18,7 +14,6 @@ function restoreCursorPosition() {
     const { x, y } = storedPosition;
     gsap.set(cursor, { x: x - 20, y: y - 20 });
   } else {
-    // Default to center if no saved position
     gsap.set(cursor, { x: window.innerWidth / 2 - 20, y: window.innerHeight / 2 - 20 });
   }
   cursor.style.display = 'block';
@@ -59,7 +54,6 @@ document.querySelectorAll("a").forEach((el) => {
   });
 });
 
-
 // =============================
 // HIDE CURSOR WHEN ENTERING IFRAME
 // =============================
@@ -74,7 +68,6 @@ if (iframe) {
     gsap.to(cursor, { opacity: 1, duration: 0.2 });
   });
 }
-
 
 // =============================
 // TWO COLUMNS SCROLLING
@@ -106,7 +99,6 @@ window.addEventListener('load', function() {
   shorter.style.alignSelf = 'start';
 });
 
-
 // =============================
 // ABOUT / LIST VIEW TRANSITIONS
 // =============================
@@ -116,6 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const logoContainer = document.querySelector('.logo-container');
   const aboutContent = document.querySelector('.about-content');
   const listViewContent = document.querySelector('.list-view-content');
+  const indexMain = document.querySelector('.index-main');
+  const indexBody = document.body;
 
   if (!aboutBtn || !listViewBtn || !logoContainer) return;
 
@@ -144,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function openAbout() {
     isAboutOpen = true;
+    indexMain.classList.add('about-open');
+    
     if (listViewBtn)
       gsap.to(listViewBtn, { opacity: 0, duration: 0.3, onComplete: () => listViewBtn.classList.add('hidden') });
     aboutBtn.textContent = 'back';
@@ -154,8 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const targetY = 120;
 
       const isMobile = window.matchMedia("(max-width: 865px)").matches;
-      const cssOffset = isMobile ? -30 : 0;
-      const translateY = targetY - centerY + cssOffset;
+      const translateY = targetY - centerY;
       const targetScale = isMobile ? 0.8 : 0.5;
 
       gsap.to(logoContainer, {
@@ -166,17 +161,31 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    if (aboutContent)
+    if (aboutContent) {
       gsap.to(aboutContent, {
         opacity: 1,
         duration: 0.6,
         delay: 0.6,
-        onStart: () => (aboutContent.style.pointerEvents = 'auto'),
+        onStart: () => {
+          aboutContent.style.pointerEvents = 'auto';
+          // Check if content needs scrolling and switch footer
+          setTimeout(() => {
+            const contentBottom = aboutContent.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            if (contentBottom > windowHeight - 50) {
+              indexBody.classList.add('scrollable');
+            }
+          }, 100);
+        },
       });
+    }
   }
 
   function closeAbout() {
     isAboutOpen = false;
+    indexMain.classList.remove('about-open');
+    indexBody.classList.remove('scrollable');
+    
     aboutBtn.textContent = 'about';
     if (aboutContent)
       gsap.to(aboutContent, {
@@ -193,6 +202,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function openListView() {
     isListViewOpen = true;
+    indexMain.classList.add('list-open');
+    
     if (aboutBtn)
       gsap.to(aboutBtn, { opacity: 0, duration: 0.3, onComplete: () => aboutBtn.classList.add('hidden') });
     listViewBtn.textContent = 'back';
@@ -213,17 +224,31 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    if (listViewContent)
+    if (listViewContent) {
       gsap.to(listViewContent, {
         opacity: 1,
         duration: 0.6,
         delay: 0.6,
-        onStart: () => (listViewContent.style.pointerEvents = 'auto'),
+        onStart: () => {
+          listViewContent.style.pointerEvents = 'auto';
+          // Check if content needs scrolling and switch footer
+          setTimeout(() => {
+            const contentBottom = listViewContent.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            if (contentBottom > windowHeight - 50) {
+              indexBody.classList.add('scrollable');
+            }
+          }, 100);
+        },
       });
+    }
   }
 
   function closeListView() {
     isListViewOpen = false;
+    indexMain.classList.remove('list-open');
+    indexBody.classList.remove('scrollable');
+    
     listViewBtn.textContent = 'artworks';
     if (listViewContent)
       gsap.to(listViewContent, {
