@@ -27,7 +27,7 @@ html, body {
   display: flex;   
   justify-content: space-between;   
   align-items: center;   
-  padding: 30px 0px 20px 0px;   
+  padding: 30px 30px 20px 30px;   
   margin: 0;
   flex-shrink: 0;
 }  
@@ -105,7 +105,6 @@ html, body {
   bottom: 30px;   
   text-align: right;   
   z-index: 10; 
-  padding: 0px;
 }  
 
 .index-footer img {   
@@ -116,6 +115,15 @@ html, body {
 /* ============================= */
 /* DETAIL PAGE STYLES */
 /* ============================= */
+
+/* Show/Hide for different layouts */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-tablet-only {
+  display: block;
+}
 
 body {
   padding: 0px 30px;
@@ -172,7 +180,7 @@ footer img {
 .left {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-self: start;
   max-width: 100%;
 }
@@ -187,7 +195,7 @@ footer img {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .diptych-container img {
@@ -203,13 +211,13 @@ footer img {
 }
 
 .left.with-text img {
-  margin: 20px 0px 0px 0px;
+  margin: 30px 0px 0px 0px;
   width: 100%;
   max-width: 100%;
 }
 
 .left.with-text p {
-  margin: 8px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .right {

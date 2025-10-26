@@ -179,6 +179,14 @@ footer img{
 }
 
 /* detail page 2 columns layout*/
+/* Show/Hide for different layouts */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-tablet-only {
+  display: block;
+}
 .prev-next{
   display:flex;
   flex-direction: row;
