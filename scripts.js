@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(() => {
       const rect = logoContainer.getBoundingClientRect();
       const centerY = rect.top + rect.height / 2;
-      const targetY = 100;
-
       const isMobile = window.matchMedia("(max-width: 865px)").matches;
+      const targetY = isMobile ? 100 : 150; // Lower target for desktop to avoid header overlap
+
       const translateY = targetY - centerY;
       const targetScale = isMobile ? 0.8 : 0.5;
 
@@ -218,9 +218,9 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(() => {
       const rect = logoContainer.getBoundingClientRect();
       const centerY = rect.top + rect.height / 2;
-      const targetY = 100;
-      const translateY = targetY - centerY;
       const isMobile = window.matchMedia('(max-width: 865px)').matches;
+      const targetY = isMobile ? 100 : 150; // Lower target for desktop to avoid header overlap
+      const translateY = targetY - centerY;
       const targetScale = isMobile ? 0.8 : 0.5;
 
       gsap.to(logoContainer, {
