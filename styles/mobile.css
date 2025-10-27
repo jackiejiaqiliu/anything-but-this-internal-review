@@ -79,7 +79,7 @@ body.index-body.scrollable {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  margin-top: -160px;
+  margin-top: -155px;
 }
 
 .logo-container img {
@@ -285,7 +285,7 @@ main p {
 }
 
 main p.image-text{
-  margin: 0px 0px 20px 0px;
+  margin: 5px 0px 20px 0px;
 }
 
 main a {
