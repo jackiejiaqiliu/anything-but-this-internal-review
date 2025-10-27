@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(() => {
       const rect = logoContainer.getBoundingClientRect();
       const centerY = rect.top + rect.height / 2;
-      const targetY = 120;
+      const targetY = 100;
 
       const isMobile = window.matchMedia("(max-width: 865px)").matches;
       const translateY = targetY - centerY;
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(() => {
       const rect = logoContainer.getBoundingClientRect();
       const centerY = rect.top + rect.height / 2;
-      const targetY = 120;
+      const targetY = 100;
       const translateY = targetY - centerY;
       const isMobile = window.matchMedia('(max-width: 865px)').matches;
       const targetScale = isMobile ? 0.8 : 0.5;

@@ -82,7 +82,7 @@ body.index-body.scrollable {
 }
 
 .index-main:not(.list-open):not(.about-open) .logo-container {
-  transform: translateY(-30px);
+  transform: translateY(-27px);
 }
 
 .logo-container img {
@@ -108,7 +108,7 @@ body.index-body.scrollable {
 .index-main.list-open .list-view-content,
 .index-main.about-open .about-content {
   /* Content MUCH closer to logo */
-  top: 170px;
+  top: 130px;
   transform: translateX(-50%);
 }
 
@@ -222,7 +222,7 @@ header img {
 }
 
 .prev-next img {
-  width: 16px;
+  width: 14px;
   height: auto;
 }
 
@@ -258,20 +258,20 @@ main {
 main h1 {
   margin: 20px 0px 5px 0px;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.2;
 }
 
 main h2 {
   margin: 0px 0px 20px 0px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.1rem;
 }
 
 main h3 {
-  margin: 40px 0px 15px 0px;
+  margin: 40px 0px -5px 0px;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 main h4 {
@@ -281,7 +281,7 @@ main h4 {
 }
 
 main p {
-  margin: 20px 0px 0px 0px;
+  margin: 0px;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
