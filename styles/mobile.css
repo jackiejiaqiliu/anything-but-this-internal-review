@@ -82,7 +82,7 @@ body.index-body.scrollable {
 }
 
 .index-main:not(.list-open):not(.about-open) .logo-container {
-  transform: translateY(-27px);
+  transform: translateY(-35px);
 }
 
 .logo-container img {
@@ -211,7 +211,7 @@ header {
 }
 
 header img {
-  width: 70%;
+  width: 60%;
   height: auto;
 }
 
@@ -258,7 +258,7 @@ main {
 main h1 {
   margin: 20px 0px 5px 0px;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.2;
 }
 
@@ -281,7 +281,7 @@ main h4 {
 }
 
 main p {
-  margin: 20px 0px 0px 0px;
+  margin: 0px;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
