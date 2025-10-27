@@ -110,10 +110,10 @@ body.index-body.scrollable {
 }
 
 /* Space below content */
-.index-main.list-open,
+/* .index-main.list-open,
 .index-main.about-open {
-  padding-bottom: 60px; /* More space at bottom to match top */
-}
+  padding-bottom: 60px; 
+} */
 
 .about-content p,
 .list-view-content p {
@@ -298,7 +298,6 @@ main img {
   width: 100%;
   max-width: 100%;
   height: auto;
-  margin: 10px 0px;
   display: block;
 }
 
