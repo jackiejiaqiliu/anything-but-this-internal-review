@@ -79,7 +79,7 @@ body.index-body.scrollable {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  margin-top: -200px;
+  margin-top: -180px;
 }
 
 .logo-container img {
@@ -334,7 +334,7 @@ main audio {
 .artist-links {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .artist-links img {
