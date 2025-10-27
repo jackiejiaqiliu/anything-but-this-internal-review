@@ -79,7 +79,7 @@ body.index-body.scrollable {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  margin-top: -85px; /* Shift up to center on full viewport, not just remaining space */
+  margin-top: -200px;
 }
 
 .logo-container img {
