@@ -193,7 +193,14 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 0.4,
         onComplete: () => (aboutContent.style.pointerEvents = 'none'),
       });
-    gsap.to(logoContainer, { scale: 1, y: 0, duration: 1, delay: 0.2, ease: 'power3.inOut' });
+    gsap.to(logoContainer, { 
+      scale: 1, 
+      y: 0, 
+      duration: 1, 
+      delay: 0.2, 
+      ease: 'power3.inOut',
+      clearProps: 'transform' // Clear inline transform after animation
+    });
     if (listViewBtn) {
       listViewBtn.classList.remove('hidden');
       gsap.to(listViewBtn, { opacity: 1, duration: 0.3, delay: 0.6 });
@@ -256,7 +263,14 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 0.4,
         onComplete: () => (listViewContent.style.pointerEvents = 'none'),
       });
-    gsap.to(logoContainer, { scale: 1, y: 0, duration: 1, delay: 0.2, ease: 'power3.inOut' });
+    gsap.to(logoContainer, { 
+      scale: 1, 
+      y: 0, 
+      duration: 1, 
+      delay: 0.2, 
+      ease: 'power3.inOut',
+      clearProps: 'transform' // Clear inline transform after animation
+    });
     if (aboutBtn) {
       aboutBtn.classList.remove('hidden');
       gsap.to(aboutBtn, { opacity: 1, duration: 0.3, delay: 0.6 });

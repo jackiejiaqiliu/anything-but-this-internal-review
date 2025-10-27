@@ -79,10 +79,7 @@ body.index-body.scrollable {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-}
-
-.index-main:not(.list-open):not(.about-open) .logo-container {
-  transform: translateY(-35px);
+  margin-top: -35px; /* Shift up to center on full viewport, not just remaining space */
 }
 
 .logo-container img {
@@ -265,7 +262,7 @@ main h1 {
 main h2 {
   margin: 0px 0px 20px 0px;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 main h3 {
@@ -281,7 +278,7 @@ main h4 {
 }
 
 main p {
-  margin: 0px;
+  margin: 20px 0px 0px 0px;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
